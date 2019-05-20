@@ -88,3 +88,60 @@ function disable_Bootrap() {
 	 });
 };
 disable_Bootrap()
+
+
+
+
+function fonction6() {
+
+	let viewBtnOver = document.getElementsByClassName('btn-group')[0];	
+	let textCardOver = document.getElementsByClassName('card-text')[0];	
+	let imgCardOver = document.getElementsByClassName('card-img-top')[0];	
+	var imgCardOverCurrWidth = imgCardOver.clientWidth;
+	var test = true
+	viewBtnOver.addEventListener('mouseover', function() {
+		if(test ===true) {
+		textCardOver.style.display = 'none';
+		imgCardOver.style.width = (imgCardOverCurrWidth * 0.2) + "px";
+		test = false
+		} 
+		else {
+		textCardOver.style.display = 'block';
+		imgCardOver.style.width = (imgCardOverCurrWidth) + "px";
+		test = true
+		} 
+	 });
+};
+fonction6()
+
+function fonction6b() {
+	const allTextCard = document.querySelectorAll('card-text');
+	const allImgCard = document.querySelectorAll('card-img-top');
+	var imgCardOverCurrWidth = allImgCard.clientWidth;
+	var test = true
+
+	let viewBtnOver = document.getElementsByClassName('btn-group')[0];	
+		console.log(`coucou0`);
+
+	viewBtnOver.addEventListener('mouseover', function() {
+		console.log(`coucou1`);
+
+		if(test ===true) {
+		console.log(allTextCard);
+			allTextCard.forEach(a => {
+		console.log(`coucou3`);
+
+				a.style.display = 'none';
+			});
+
+		test = false
+		} 
+		else {
+			allTextCard.forEach(a => {
+				a.style.display = 'block';
+			});
+		test = true
+		} 
+	 });
+};
+fonction6b()
